@@ -4,13 +4,17 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Build phase'
+                nodejs(nodeJSInstallationName: 'Node 14.x') {
+                    npm install
+                }
             }
 
         }
         stage('Deploy') {
             steps {
-                sh 'serverless deploy'
+                nodejs(nodeJSInstallationName: 'Node 14.x') {
+                    serverless deploy
+                }
             }
         }
     }
