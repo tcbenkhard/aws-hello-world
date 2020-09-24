@@ -13,7 +13,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 nodejs(nodeJSInstallationName: 'Node 14.x') {
-                    sh 'serverless deploy'
+                    sh 'SLS_DEBUG=1 serverless deploy'
                 }
             }
         }
