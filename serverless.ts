@@ -18,6 +18,7 @@ const serverlessConfiguration: Serverless = {
   // Add the serverless-webpack plugin
   plugins: ['serverless-webpack'],
   provider: {
+    region: 'eu-west-1',
     name: 'aws',
     runtime: 'nodejs12.x',
     apiGateway: {
