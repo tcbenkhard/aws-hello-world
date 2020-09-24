@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
                 nodejs(nodeJSInstallationName: 'Node 14.x') {
-                    npm install
+                    sh 'npm install'
                 }
             }
 
@@ -13,7 +13,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 nodejs(nodeJSInstallationName: 'Node 14.x') {
-                    serverless deploy
+                    sh 'serverless deploy'
                 }
             }
         }
