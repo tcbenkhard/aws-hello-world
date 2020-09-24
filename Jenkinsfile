@@ -3,10 +3,15 @@ pipeline {
 
     stages {
         stage('Build') {
-            echo 'Build phase'
+            steps {
+                echo 'Build phase'
+            }
+
         }
         stage('Deploy') {
-            sh 'serverless deploy'
+            steps {
+                sh 'serverless deploy'
+            }
         }
     }
 }
