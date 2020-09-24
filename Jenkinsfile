@@ -3,7 +3,7 @@ pipeline {
 
     stages {
         stage('Build') {
-            scm checkout
+            echo 'Build phase'
         }
         stage('Deploy') {
             sh 'serverless deploy'
